@@ -17,7 +17,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-gray-800 via-black to-gray-800 w-full gap-14 flex flex-col items-center pt-20"
+      className="min-h-screen bg-[conic-gradient(at_bottom,_var(--tw-gradient-stops))] from-bluezodiac/90 via-black to-bluezodiac/90 w-full gap-14 flex flex-col items-center pt-28 scroll"
     >
       <h2 className="text-center text-8xl text-mongoose font-caveat mb-6">
         About Us

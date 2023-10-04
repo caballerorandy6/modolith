@@ -19,11 +19,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
       <body
         className={`min-h-screen overflow-y-scroll ${caveat.variable} ${caveatbrush.variable}`}
       >
-        <header>
+        <header className="relative flex justify-center items-center">
           <Navbar />
         </header>
         {children}

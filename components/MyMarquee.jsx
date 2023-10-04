@@ -14,8 +14,8 @@ const companies = [
       <Image
         src="/advon-logo.png"
         alt="advon logo"
-        width={280}
-        height={280}
+        width={250}
+        height={250}
         priority
       />
     ),
@@ -27,8 +27,8 @@ const companies = [
       <Image
         src="/bc-logo.png"
         alt="bc logo"
-        width={280}
-        height={280}
+        width={250}
+        height={250}
         priority
       />
     ),
@@ -40,8 +40,8 @@ const companies = [
       <Image
         src="/gl-logo.webp"
         alt="bc logo"
-        width={280}
-        height={280}
+        width={250}
+        height={250}
         priority
       />
     ),
@@ -53,8 +53,8 @@ const companies = [
       <Image
         src="/metco-logo.png"
         alt="bc logo"
-        width={280}
-        height={280}
+        width={250}
+        height={250}
         priority
       />
     ),
@@ -66,8 +66,8 @@ const companies = [
       <Image
         src="/patriot-logo.png"
         alt="bc logo"
-        width={280}
-        height={280}
+        width={250}
+        height={250}
         priority
       />
     ),
@@ -78,7 +78,10 @@ const MyMarquee = () => {
   return (
     <Marquee pauseOnHover={true} direction="right" loop={0}>
       {companies.map((company) => (
-        <article key={company.name} className="flex flex-col gap-2">
+        <article
+          key={company.name}
+          className="flex flex-col items-center justify-center gap-2"
+        >
           {company.image}
           <h2 className="text-mongoose text-lg">{company.name}</h2>
           <p>

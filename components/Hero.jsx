@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="w-full min-h-screen overflow-y-scroll  bg-cover object-cover"
+      className="w-full min-h-screen overflow-y-scroll  bg-cover object-cover scroll-mt-[100rem]"
     >
       <HeroVideo />
     </section>

@@ -1,34 +1,26 @@
-import { Link as LinkScroll } from "react-scroll";
+import Link from "next/link";
 
-const NavLink = ({ children, to, prefetch }) => {
-  if (to === to) {
+const NavLink = ({ children, href, prefetch }) => {
+  if (href === href) {
     return (
-      <LinkScroll
-        to={to}
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
+      <Link
+        href={href}
         prefetch={prefetch}
         className="w-4/12 text-mongoose font-caveatbrush text-2xl"
       >
         {children}
-      </LinkScroll>
+      </Link>
     );
   }
 
   return (
-    <LinkScroll
-      to={url}
-      spy={true}
-      smooth={true}
-      offset={50}
-      duration={500}
+    <Link
+      href={url}
       prefetch={prefetch}
       className="relative group hover:text-mongoose transition-colors hover:delay-100 text-2xl font-caveatbrush"
     >
       {children}
-    </LinkScroll>
+    </Link>
   );
 };
 
