@@ -26,8 +26,8 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.rfm-marquee {
-}
+/* .rfm-marquee {
+} */
 
 .rfm-child {
   display: flex;

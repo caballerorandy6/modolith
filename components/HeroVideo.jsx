@@ -34,7 +34,7 @@ function HeroVideo() {
             className="flex justify-center"
           >
             <Link
-              href="about"
+              href="#about"
               className="bg-bluezodiac/90 hover:bg-bluezodiac/95 backdrop-blur text-white cursor-pointer px-6 py-4 font-caveatbrush text-xl rounded-full hover:bg-blue-950  transition-colors flex justify-center gap-2 items-center w-[10rem]"
             >
               View More

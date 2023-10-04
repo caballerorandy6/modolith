@@ -14,7 +14,7 @@ const Navbar = () => {
       initial="initial"
       animate="animate"
     >
-      <Link href="hero">
+      <Link href="#hero">
         <Image
           src="/company.png"
           alt="company logo"
