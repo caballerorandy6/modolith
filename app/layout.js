@@ -7,6 +7,7 @@ import { caveat, caveatbrush } from "./fonts";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
+import { ModolithProvider } from "@/context/ModolithProvider";
 
 export const metadata = {
   title: {
@@ -21,12 +22,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`min-h-screen overflow-y-scroll ${caveat.variable} ${caveatbrush.variable}`}
+        className={`min-h-screen overflow-y-scroll ${caveat.variable} ${caveatbrush.variable} bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-bluezodiac-100 via-blue-300 to-bluezodiac-500`}
       >
-        <header className="relative flex justify-center items-center">
+        <header>
           <Navbar />
         </header>
-        {children}
+
+        <ModolithProvider>{children}</ModolithProvider>
+
         <footer>
           <Footer />
         </footer>

@@ -83,18 +83,18 @@ const MyMarquee = () => {
           className="flex flex-col items-center justify-center gap-2"
         >
           {company.image}
-          <h2 className="text-mongoose text-lg">{company.name}</h2>
-          <p>
+          <h2 className="text-bluezodiac text-lg">{company.name}</h2>
+          <>
             <motion.div variants={linkVariants} whileHover="hover">
               <Link
                 href={company.url}
                 target="_blank"
-                className="font-caveat text-2xl hover:text-rollingstone transition-colors"
+                className="font-caveat text-2xl hover:text-bluezodiac transition-colors"
               >
                 Visit Website...
               </Link>
             </motion.div>
-          </p>
+          </>
         </article>
       ))}
     </Marquee>

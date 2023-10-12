@@ -17,7 +17,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-[conic-gradient(at_bottom,_var(--tw-gradient-stops))] from-bluezodiac/90 via-black to-bluezodiac/90 w-full gap-14 flex flex-col items-center pt-28 scroll"
+      className="min-h-screen w-full gap-14 flex flex-col items-center pt-28 scroll bg-gradient-to-tr from-gray-800 via-gray-400 to-gray-950"
     >
       <h2 className="text-center text-8xl text-mongoose font-caveat mb-6">
         About Us
@@ -46,7 +46,7 @@ const About = () => {
         <br />
         <p className="text-white w-full mx-auto"> We are here to serve!</p>
       </article>
-      <h3 className="text-rollingstone font-caveatbrush text-4xl ">
+      <h3 className="text-bluezodiac font-caveatbrush text-4xl ">
         Modolith Clients/Partners
       </h3>
       <MyMarquee />
