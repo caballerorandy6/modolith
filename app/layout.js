@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`min-h-screen overflow-y-scroll ${caveat.variable} ${caveatbrush.variable} bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-bluezodiac-100 via-blue-300 to-bluezodiac-500`}
+        className={`min-h-screen overflow-y-scroll ${caveat.variable} ${caveatbrush.variable} bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black`}
       >
         <header>
           <Navbar />

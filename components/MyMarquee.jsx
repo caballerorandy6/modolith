@@ -1,102 +1,46 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { partners } from "@/lib/arrays";
 import { motion } from "framer-motion";
 import { linkVariants } from "@/lib/framer-motion-animations";
 
-const companies = [
-  {
-    name: "Advon Construction",
-    url: "https://advonconstruction.com/",
-    image: (
-      <Image
-        src="/advon-logo.png"
-        alt="advon logo"
-        width={250}
-        height={250}
-        priority
-      />
-    ),
-  },
-  {
-    name: "Brazosport College",
-    url: "https://brazosport.edu/",
-    image: (
-      <Image
-        src="/bc-logo.png"
-        alt="bc logo"
-        width={250}
-        height={250}
-        priority
-      />
-    ),
-  },
-  {
-    name: "G&L Construction",
-    url: "https://www.glconstructionco.com/",
-    image: (
-      <Image
-        src="/gl-logo.webp"
-        alt="bc logo"
-        width={250}
-        height={250}
-        priority
-      />
-    ),
-  },
-  {
-    name: "METCO Engineering",
-    url: "https://www.metcoengineering.com/",
-    image: (
-      <Image
-        src="/metco-logo.png"
-        alt="bc logo"
-        width={250}
-        height={250}
-        priority
-      />
-    ),
-  },
-  {
-    name: "Patriot Development & Construction",
-    url: "https://www.patriotdevelopment.com/",
-    image: (
-      <Image
-        src="/patriot-logo.png"
-        alt="bc logo"
-        width={250}
-        height={250}
-        priority
-      />
-    ),
-  },
-];
-
 const MyMarquee = () => {
   return (
-    <Marquee pauseOnHover={true} direction="right" loop={0}>
-      {companies.map((company) => (
-        <article
+    <Marquee
+      pauseOnHover={true}
+      direction="right"
+      loop={0}
+      className="bg-gradient-to-t from-white/70 via-gray-300 to-bluezodiac/10 cursor-pointer"
+    >
+      {partners.map((company) => (
+        <motion.article
           key={company.name}
-          className="flex flex-col items-center justify-center gap-2"
+          variants={linkVariants}
+          whileHover="hover"
+          className="mb-6 mt-8"
         >
-          {company.image}
-          <h2 className="text-bluezodiac text-lg">{company.name}</h2>
-          <>
-            <motion.div variants={linkVariants} whileHover="hover">
-              <Link
-                href={company.url}
-                target="_blank"
-                className="font-caveat text-2xl hover:text-bluezodiac transition-colors"
-              >
-                Visit Website...
-              </Link>
-            </motion.div>
-          </>
-        </article>
+          <Link href={company.url}>
+            <Image
+              src={company.image}
+              alt="bc logo"
+              quality="95"
+              loading="lazy"
+              objectFit="contain"
+              width="200"
+              height="200"
+            />
+          </Link>
+          <h2 className="text-bluezodiac text-xl font-caveatbrush">
+            {company.name}
+          </h2>
+        </motion.article>
       ))}
+      <p className="text-4xl font-caveatbrush text-bluezodiac">
+        Modolith LLC Partner Companies
+      </p>
     </Marquee>
   );
 };

@@ -29,7 +29,7 @@ const Navbar = () => {
           className="cursor-pointer ml-4"
         />
       </Link>
-      <ul className="flex place-content-end items-center w-6/12 gap-10 mr-8">
+      <ul className="flex place-content-end items-center w-6/12 gap-4 mr-8">
         {navbar.map((link) => (
           <motion.li
             key={link.id}
@@ -40,7 +40,7 @@ const Navbar = () => {
             <Link
               href={link.hash}
               className={clsx(
-                "hover:text-mongoose font-caveat transition-colors text-3xl cursor-pointer",
+                "hover:text-mongoose font-caveat transition-colors text-2xl cursor-pointer",
                 { "text-mongoose": activeSection === link.name }
               )}
               onClick={() => setActiveSection(link.name)}

@@ -17,36 +17,38 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen w-full gap-14 flex flex-col items-center pt-28 scroll bg-gradient-to-tr from-gray-800 via-gray-400 to-gray-950"
+      className="overflow-y-scroll w-full gap-14 flex flex-col items-center pt-10 scroll"
     >
       <h2 className="text-center text-8xl text-mongoose font-caveat mb-6">
         About Us
       </h2>
       <article className="w-10/12 text-white/80">
-        <p className="w-full mx-auto font-roboto_condensed">
+        <p className="w-full mx-auto font-roboto_condensed mb-2">
           We are proud to introduce ourselves as a new steel erection contractor
           for the Greater Houston area and surrounding counties.
         </p>
-        <br />
 
-        <p className="w-full mx-auto">
+        <p className="w-full mx-auto mb-2">
           As natives of southern Brazoria county (Freeport) we are committed to
           maintaining a positive and strong image and relationship with the
           people of our community. We know that our name and the success of our
           endeavors will be closely tied to the roots and foundations that we
           make for ourselves here in the area.
         </p>
-        <br />
-        <p className="w-full mx-auto">
+
+        <p className="w-full mx-auto mb-2">
           Consider us for any job involving steel work and metal building
           erection. We do small to medium scale residential and commercial.
           Shop, barn, garage, warehouse, if it&#39;s made out of steel we build
           it. We can handle material procurement or put you in touch directly.
         </p>
-        <br />
-        <p className="text-white w-full mx-auto"> We are here to serve!</p>
+
+        <p className="text-white w-full mx-auto font-semibold">
+          {" "}
+          We are here to serve!
+        </p>
       </article>
-      <h3 className="text-bluezodiac font-caveatbrush text-4xl ">
+      <h3 className="text-rollingstone font-caveatbrush text-4xl ">
         Modolith Clients/Partners
       </h3>
       <MyMarquee />
