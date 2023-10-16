@@ -34,3 +34,11 @@ body {
   text-align: center;
   margin-left: 7rem;
 }
+
+.divider {
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}

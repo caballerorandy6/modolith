@@ -1,18 +1,32 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { HiArrowDown } from "react-icons/hi";
 import Heading from "./Heading";
 import { motion } from "framer-motion";
 import { linkVariants, heroVariants } from "@/lib/framer-motion-animations";
+import { useInView } from "react-intersection-observer";
+import useActiveSection from "@/hooks/useActiveSection";
+import { useEffect } from "react";
 
 const Hero = () => {
-  const [modal, setModal] = useState(false);
+  const { setActiveSection } = useActiveSection();
+
+  const { ref, inView } = useInView({
+    threshold: 0.75,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("Home");
+    }
+  }, [inView, setActiveSection]);
+
   return (
     <section
-      id="hero"
-      className="w-full min-h-screen overflow-y-scroll  bg-cover object-cover scroll-mt-[100rem]"
+      ref={ref}
+      id="home"
+      className="w-full h-screen overflow-y-scroll  bg-cover object-cover scroll-mt-[100rem]"
     >
       <div className="relative h-screen">
         <video

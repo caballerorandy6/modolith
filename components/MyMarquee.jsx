@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Marquee from "react-fast-marquee";
 import { partners } from "@/lib/arrays";
 import { motion } from "framer-motion";
@@ -13,16 +12,15 @@ const MyMarquee = () => {
       pauseOnHover={true}
       direction="right"
       loop={0}
-      className="bg-gradient-to-t from-white/70 via-gray-300 to-bluezodiac/10 cursor-pointer"
+      className="bg-gradient-to-b from-white/70 via-gray-300 to-bluezodiac/10 cursor-pointer border-t-2"
     >
       {partners.map((company) => (
         <motion.article
           key={company.name}
           variants={linkVariants}
           whileHover="hover"
-          className="mb-6 mt-8"
         >
-          <Link href={company.url}>
+          <a href={company.url} target="_blank" rel="noopener noreferrer">
             <Image
               src={company.image}
               alt="bc logo"
@@ -32,10 +30,7 @@ const MyMarquee = () => {
               width="200"
               height="200"
             />
-          </Link>
-          <h2 className="text-bluezodiac text-xl font-caveatbrush">
-            {company.name}
-          </h2>
+          </a>
         </motion.article>
       ))}
       <p className="text-4xl font-caveatbrush text-bluezodiac">

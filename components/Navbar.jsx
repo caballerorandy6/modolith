@@ -1,15 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { navbar } from "@/lib/arrays";
 import { motion } from "framer-motion";
 import { linkVariants, navVariants } from "@/lib/framer-motion-animations";
 import clsx from "clsx";
+import useActiveSection from "@/hooks/useActiveSection";
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState("Home");
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSection();
 
   return (
     <motion.nav
@@ -43,7 +44,10 @@ const Navbar = () => {
                 "hover:text-mongoose font-caveat transition-colors text-2xl cursor-pointer",
                 { "text-mongoose": activeSection === link.name }
               )}
-              onClick={() => setActiveSection(link.name)}
+              onClick={() => {
+                setActiveSection(link.name);
+                setTimeOfLastClick(Date.now());
+              }}
             >
               {link.name}
               {link.name === activeSection && (
