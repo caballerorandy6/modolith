@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
 import { ActiveSectionProvider } from "@/context/ActiveSectionContext";
-
+import { OpenModalProvider } from "@/context/OpenModalContext";
 export const metadata = {
   title: {
     default: "Modolith LLC",
@@ -25,15 +25,17 @@ export default function RootLayout({ children }) {
         className={`overflow-y-scroll ${caveat.variable} ${caveatbrush.variable} bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black`}
       >
         <ActiveSectionProvider>
-          <header>
-            <Navbar />
-          </header>
+          <OpenModalProvider>
+            <header>
+              <Navbar />
+            </header>
 
-          {children}
+            {children}
 
-          <footer>
-            <Footer />
-          </footer>
+            <footer>
+              <Footer />
+            </footer>
+          </OpenModalProvider>
         </ActiveSectionProvider>
 
         <ToastContainer />

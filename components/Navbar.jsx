@@ -4,13 +4,21 @@ import Image from "next/legacy/image";
 import Link from "next/link";
 import { navbar } from "@/lib/arrays";
 import { motion } from "framer-motion";
+import { FaPhone, FaComment } from "react-icons/fa";
 import { linkVariants, navVariants } from "@/lib/framer-motion-animations";
 import clsx from "clsx";
 import useActiveSection from "@/hooks/useActiveSection";
+import useOpenModal from "@/hooks/useOpenModal";
+import ContactModal from "./ContactModal";
 
 const Navbar = () => {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSection();
+  const { setIsOpen } = useOpenModal();
+
+  const handleModal = () => {
+    setIsOpen(true);
+  };
 
   return (
     <motion.nav
@@ -19,7 +27,7 @@ const Navbar = () => {
       initial="initial"
       animate="animate"
     >
-      <Link href="#hero">
+      <Link href="#hero" className="w-3/12">
         <Image
           src="/company.png"
           alt="company logo"
@@ -30,7 +38,19 @@ const Navbar = () => {
           className="cursor-pointer ml-4"
         />
       </Link>
-      <ul className="flex place-content-end items-center w-6/12 gap-4 mr-8">
+      <div className="flex gap-4 justify-center items-center w-4/12">
+        <motion.div
+          variants={linkVariants}
+          whileHover="hover"
+          className="flex justify-center items-center gap-4 text-white/80 transition-colors bg-rollingstone/50 rounded-full p-4 hover:bg-mongoose/60 cursor-pointer"
+        >
+          <Link href="tel:+19796656688" className="flex items-center gap-4">
+            <p className="font-caveat text-2xl text-white/80">Call us now!</p>
+            <FaPhone size={20} />
+          </Link>
+        </motion.div>
+      </div>
+      <ul className="flex place-content-end items-center w-5/12 gap-4 mr-8">
         {navbar.map((link) => (
           <motion.li
             key={link.id}
@@ -60,6 +80,17 @@ const Navbar = () => {
             </Link>
           </motion.li>
         ))}
+        <li>
+          <motion.button
+            onClick={handleModal}
+            className="flex gap-4 items-center font-caveat hover:text-mongoose transition-colors text-2xl cursor-pointer"
+            variants={linkVariants}
+            whileHover="hover"
+          >
+            Contact <FaComment size={20} />
+          </motion.button>
+        </li>
+        <ContactModal />
       </ul>
     </motion.nav>
   );

@@ -1,7 +1,6 @@
 "use client";
 
 import { createContext, useState } from "react";
-import { navbar } from "@/lib/arrays";
 
 //Context
 const ActiveSectionContext = createContext();
@@ -9,6 +8,16 @@ const ActiveSectionContext = createContext();
 const ActiveSectionProvider = ({ children }) => {
   const [activeSection, setActiveSection] = useState("Home");
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);
+  let [isOpen, setIsOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
   return (
     <ActiveSectionContext.Provider
       value={{
@@ -16,6 +25,9 @@ const ActiveSectionProvider = ({ children }) => {
         setActiveSection,
         timeOfLastClick,
         setTimeOfLastClick,
+        isOpen,
+        closeModal,
+        openModal,
       }}
     >
       {children}
@@ -24,5 +36,4 @@ const ActiveSectionProvider = ({ children }) => {
 };
 
 export { ActiveSectionProvider };
-
 export default ActiveSectionContext;
